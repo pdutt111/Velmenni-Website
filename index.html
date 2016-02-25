@@ -3,8 +3,13 @@
 <head>
 	<title>Velmenni</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Custom Style Sheet -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<!-- Bootstrap -->
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+	
 </head>
 <body style="position: relative;" data-target="#navbar" data-spy="scroll">
 	<nav class="navbar navbar-default navbar-fixed-top" id="navbar" >
@@ -28,9 +33,22 @@
 		</div>		
 	</nav>
 
+	<div class="container-fluid text-center main-body">				
+				<video
+		    		id="vid1"
+		    		class="video-js vjs-default-skin"
+		    		controls
+		    		data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/embed/wqH9KX9o0vg?rel=0&amp;controls=0&amp;showinfo=0"}] }'
+		  		>
+		  		</video>
+	</div>
+
 
 	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="bower_components/video.js/dist/video.min.js"></script>
+	<script type="text/javascript" src="bower_components/videojs-youtube/dist/Youtube.js"></script>
+	<!-- Video.js for Youtube Videos -->
+	<link rel="stylesheet" type="text/css" href="bower_components/video.js/dist/video-js.min.css">
 </body>
 </html>

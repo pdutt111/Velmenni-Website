@@ -1,0 +1,23 @@
+{
+  "name": "Velmenni-Website",
+  "homepage": "https://github.com/pdutt111/Velmenni-Website",
+  "authors": [
+    "valindo godinho <valindo.godinho@gmail.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "video.js": "^5.8.0"
+  }
+}

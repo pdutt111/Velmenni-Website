@@ -8,6 +8,12 @@ app.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
 	}).state("products",{
 		url: "/products",
 		templateUrl: "partials/products.html"
+	}).state("team",{
+		url: "/team",
+		templateUrl: "partials/team.html"
+	}).state("contact",{
+		url: '/contact',
+		templateUrl: 'partials/contact.html'
 	});
 	$locationProvider.html5Mode(true);
 });

@@ -1,15 +1,11 @@
-var app = angular.module('velmenniApp',[]);
+var app = angular.module('velmenniApp',['ui.router']);
 
-app.controller('bodyVideo', ['$scope', function($scope){
-	$scope.state = false;
-	$scope.testfunction = function(){
-		$scope.state = true;
-	}
-}]);
-
-app.controller('navbarVideo', ['$scope','videoScrollState', function($scope, videoScrollState){
-	$scope.state = videoScrollState.state;
-}]);
-
+app.config(function($stateProvider, $urlRouterProvider) {
+	$urlRouterProvider.otherwise("/");
+	$stateProvider.state("/",{
+		url: "/",
+		templateUrl: "partials/video.html"
+	});
+});
 
 

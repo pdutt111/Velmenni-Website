@@ -10,6 +10,10 @@
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
 	<!-- VideoJs Stylesheet -->
 	<link rel="stylesheet" type="text/css" href="bower_components/video.js/dist/video-js.min.css">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<base href="/"></base>
 	
 </head>
 <body style="position: relative;" data-target="#navbar" data-spy="scroll">
@@ -26,7 +30,8 @@
 			</div>
 			<div class="collapse navbar-collapse navbar-right" id="toggle-navbar">
 				<ul class="nav navbar-nav">
-					<li class=""><a href="#test2">Products</a></li>
+					<li class=""><a href="/">Home</a></li>
+					<li class=""><a ui-sref="products">Products</a></li>
 					<li class=""><a href="#test">About</a></li>
 					<li class=""><a href="#test1">Contact</a></li>
 				</ul>
@@ -34,72 +39,19 @@
 		</div>		
 	</nav>
 
-	<div id="mainVideo" class="container-fluid text-center main-body" >				
-		<video id="video-main" data-setup="{}" class="video-js" controls preload="auto" >
-			<source src="assets/video/test.mp4" type="video/mp4">
-		</video>
-	</div>
-	<div id="dummyVideo" class="hidden"></div>
-
-	<div class="container share-this">
-		<h4 style="padding-bottom: 1%">Share this on</h4>
-		<div class="row" >
-			<div class="col-md-6">
-				<a id="fb" href="#"><img src="assets/images/social-icons/fb.png"></a>
-				<a href="https://twitter.com/intent/tweet?text=Check%20Out&url=https://youtu.be/9QAzEKVsjMQ" target="_blank"><img src="assets/images/social-icons/twitter.png"></a>
-				<!-- <a href=""><img src="assets/images/social-icons/utube.png"></a> -->
-				<a href="https://www.linkedin.com/cws/share?url=https://youtu.be/9QAzEKVsjMQ" target="_blank"><img src="assets/images/social-icons/linkedin.png"></a>
-			</div>
-			<div class="col-md-6">
-			</div>				
-		</div>
+	<div ui-view>
+		<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="bower_components/video.js/dist/video.min.js"></script>
+		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+		<script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+		<script type="text/javascript" src="assets/js/main.js"></script>
 	</div>
 
-	<div ui-view></div>
 
 
+	
 
-	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="bower_components/video.js/dist/video.min.js"></script>
-	<!-- <script type="text/javascript" src="bower_components/videojs-youtube/dist/Youtube.js"></script> -->
-	<!-- Video.js for Youtube Videos -->
-	<!-- Custom Style Sheet -->
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-	<script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-	<script type="text/javascript" src="assets/js/main.js"></script>
-
-	<script type="text/javascript">
-		// var video = videojs('#video-main');
-		
-		$(window).scroll(function() {    
-			var scroll = $(window).scrollTop();	
-	     	if (scroll >= 500 && document.getElementById('mainVideo') != null) {
-	     		var width = $('#mainVideo').width();
-				var height = 480;
-	        	$('.video-js').addClass("navbar-video");
-	        	$('.navbar-brand').addClass("hidden");
-	        	$('.navbar').addClass("navbar-resize");
-	        	$('.vjs-big-play-button').addClass("navbar-video-button");
-	        	$('#navbar').removeClass('navbar-line');
-	        	$("#dummyVideo").removeClass("hidden");
-	        	$("#dummyVideo").css({"width":width, "height": height});
-	    	} else {
-	    		$('.video-js').removeClass("navbar-video");
-	        	$('.navbar-brand').removeClass("hidden");
-	        	$('.navbar').removeClass("navbar-resize");
-	        	$('.vjs-big-play-button').removeClass("navbar-video-button");
-	        	$('#navbar').addClass('navbar-line');
-	        	$("#dummyVideo").addClass("hidden");
-	    	}
-		});
-
-		$("#fb").on("click",function(){
-    		var fbpopup = window.open("https://www.facebook.com/sharer/sharer.php?u=https://youtu.be/9QAzEKVsjMQ", "pop", "width=600, height=400, scrollbars=no");
-    	return false;
-		});	
-	</script>
+	
 </body>
 </html>
